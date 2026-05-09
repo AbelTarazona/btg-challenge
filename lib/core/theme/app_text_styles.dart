@@ -3,65 +3,87 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
 
-/// Estilos tipográficos consistentes usando Google Fonts Inter.
 class AppTextStyles {
-  AppTextStyles._();
+  final TextStyle heading1;
+  final TextStyle heading2;
+  final TextStyle heading3;
+  final TextStyle subtitle;
+  final TextStyle body;
+  final TextStyle bodySmall;
+  final TextStyle label;
+  final TextStyle balance;
+  final TextStyle balanceCurrency;
 
-  static TextStyle get heading1 => GoogleFonts.inter(
+  const AppTextStyles._({
+    required this.heading1,
+    required this.heading2,
+    required this.heading3,
+    required this.subtitle,
+    required this.body,
+    required this.bodySmall,
+    required this.label,
+    required this.balance,
+    required this.balanceCurrency,
+  });
+
+  static AppTextStyles _fromColors(AppColors colors) {
+    return AppTextStyles._(
+      heading1: GoogleFonts.inter(
         fontSize: 28,
         fontWeight: FontWeight.w700,
-        color: AppColors.textPrimary,
+        color: colors.textPrimary,
         letterSpacing: -0.5,
-      );
-
-  static TextStyle get heading2 => GoogleFonts.inter(
+      ),
+      heading2: GoogleFonts.inter(
         fontSize: 22,
         fontWeight: FontWeight.w600,
-        color: AppColors.textPrimary,
+        color: colors.textPrimary,
         letterSpacing: -0.3,
-      );
-
-  static TextStyle get heading3 => GoogleFonts.inter(
+      ),
+      heading3: GoogleFonts.inter(
         fontSize: 18,
         fontWeight: FontWeight.w600,
-        color: AppColors.textPrimary,
-      );
-
-  static TextStyle get subtitle => GoogleFonts.inter(
+        color: colors.textPrimary,
+      ),
+      subtitle: GoogleFonts.inter(
         fontSize: 14,
         fontWeight: FontWeight.w500,
-        color: AppColors.textSecondary,
-      );
-
-  static TextStyle get body => GoogleFonts.inter(
+        color: colors.textSecondary,
+      ),
+      body: GoogleFonts.inter(
         fontSize: 14,
         fontWeight: FontWeight.w400,
-        color: AppColors.textPrimary,
-      );
-
-  static TextStyle get bodySmall => GoogleFonts.inter(
+        color: colors.textPrimary,
+      ),
+      bodySmall: GoogleFonts.inter(
         fontSize: 12,
         fontWeight: FontWeight.w400,
-        color: AppColors.textSecondary,
-      );
-
-  static TextStyle get label => GoogleFonts.inter(
+        color: colors.textSecondary,
+      ),
+      label: GoogleFonts.inter(
         fontSize: 11,
         fontWeight: FontWeight.w600,
-        color: AppColors.textMuted,
+        color: colors.textMuted,
         letterSpacing: 0.8,
-      );
-
-  static TextStyle get balance => GoogleFonts.inter(
+      ),
+      balance: GoogleFonts.inter(
         fontSize: 34,
         fontWeight: FontWeight.w700,
-        color: AppColors.textPrimary,
+        color: colors.textPrimary,
         letterSpacing: -1.0,
-      );
-
-  static TextStyle get balanceCurrency => GoogleFonts.inter(
+      ),
+      balanceCurrency: GoogleFonts.inter(
         fontSize: 16,
         fontWeight: FontWeight.w500,
-        color: AppColors.accentGold,
-      );
+        color: colors.accentGold,
+      ),
+    );
+  }
+
+  static final _light = _fromColors(AppColors.light);
+  static final _dark = _fromColors(AppColors.dark);
+
+  static AppTextStyles of(BuildContext context) {
+    return Theme.of(context).brightness == Brightness.dark ? _dark : _light;
+  }
 }
