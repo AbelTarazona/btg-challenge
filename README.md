@@ -60,7 +60,7 @@ Antes de ejecutar el proyecto, asegúrate de tener instalados:
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/AbelTaraworka/btg-challenge.git
+git clone https://github.com/AbelTarazona/btg-challenge.git
 cd btg-challenge
 ```
 
