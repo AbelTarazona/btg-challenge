@@ -1,4 +1,4 @@
-import 'package:btgproject/presentation/dashboard/home_page.dart';
+import 'package:btgproject/presentation/dashboard/pages/home_page.dart';
 import 'package:btgproject/presentation/funds/pages/funds_page.dart';
 import 'package:btgproject/presentation/transactions/pages/transactions_page.dart';
 import 'package:go_router/go_router.dart';

@@ -1,16 +1,22 @@
-import 'package:intl/intl.dart';
-
 /// Formatea valores monetarios en formato COP colombiano.
 ///
-/// Ejemplo: 500000.0 → "$ 500.000"
+/// Ejemplo: 75000.0 → "\$75.000"
 class CurrencyFormatter {
-  static final _formatter = NumberFormat.currency(
-    locale: 'es_CO',
-    symbol: '\$',
-    decimalDigits: 0,
-  );
-
   static String formatCOP(double amount) {
-    return _formatter.format(amount);
+    final intValue = amount.toInt();
+    final formatted = _addThousandsSeparator(intValue);
+    return '\$$formatted';
+  }
+
+  static String _addThousandsSeparator(int value) {
+    final str = value.toString();
+    final buffer = StringBuffer();
+    for (int i = 0; i < str.length; i++) {
+      if (i > 0 && (str.length - i) % 3 == 0) {
+        buffer.write('.');
+      }
+      buffer.write(str[i]);
+    }
+    return buffer.toString();
   }
 }
