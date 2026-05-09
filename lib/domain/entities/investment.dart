@@ -15,4 +15,25 @@ class Investment {
     required this.subscriptionDate,
     required this.notificationMethod,
   });
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Investment &&
+          runtimeType == other.runtimeType &&
+          id == other.id &&
+          fundId == other.fundId &&
+          fundName == other.fundName &&
+          amount == other.amount &&
+          subscriptionDate == other.subscriptionDate &&
+          notificationMethod == other.notificationMethod;
+
+  @override
+  int get hashCode =>
+      id.hashCode ^
+      fundId.hashCode ^
+      fundName.hashCode ^
+      amount.hashCode ^
+      subscriptionDate.hashCode ^
+      notificationMethod.hashCode;
 }

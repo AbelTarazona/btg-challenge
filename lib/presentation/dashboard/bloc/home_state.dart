@@ -37,6 +37,31 @@ class HomeState {
     return investments.any((inv) => inv.fundId == fundId);
   }
 
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is HomeState &&
+          runtimeType == other.runtimeType &&
+          status == other.status &&
+          user == other.user &&
+          funds == other.funds &&
+          investments == other.investments &&
+          errorMessage == other.errorMessage &&
+          selectedCategory == other.selectedCategory &&
+          subscriptionStatus == other.subscriptionStatus &&
+          subscriptionError == other.subscriptionError;
+
+  @override
+  int get hashCode =>
+      status.hashCode ^
+      user.hashCode ^
+      funds.hashCode ^
+      investments.hashCode ^
+      errorMessage.hashCode ^
+      selectedCategory.hashCode ^
+      subscriptionStatus.hashCode ^
+      subscriptionError.hashCode;
+
   HomeState copyWith({
     HomeStatus? status,
     User? user,

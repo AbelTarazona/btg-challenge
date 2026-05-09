@@ -1,13 +1,15 @@
 import 'package:btgproject/domain/entities/fund.dart';
 
-sealed class HomeEvent {}
+sealed class HomeEvent {
+  const HomeEvent();
+}
 
 class HomeLoadRequested extends HomeEvent {}
 
 class HomeCategoryChanged extends HomeEvent {
   final String category;
 
-  HomeCategoryChanged(this.category);
+  const HomeCategoryChanged(this.category);
 }
 
 class SubscribeToFund extends HomeEvent {
@@ -15,7 +17,7 @@ class SubscribeToFund extends HomeEvent {
   final double amount;
   final String notificationMethod; // 'EMAIL' | 'SMS'
 
-  SubscribeToFund({
+  const SubscribeToFund({
     required this.fund,
     required this.amount,
     required this.notificationMethod,

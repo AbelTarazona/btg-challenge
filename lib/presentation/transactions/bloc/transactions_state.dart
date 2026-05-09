@@ -23,6 +23,23 @@ class TransactionsState {
     return transactions.where((t) => t.type == 'CANCELLATION').toList();
   }
 
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is TransactionsState &&
+          runtimeType == other.runtimeType &&
+          status == other.status &&
+          transactions == other.transactions &&
+          errorMessage == other.errorMessage &&
+          selectedFilter == other.selectedFilter;
+
+  @override
+  int get hashCode =>
+      status.hashCode ^
+      transactions.hashCode ^
+      errorMessage.hashCode ^
+      selectedFilter.hashCode;
+
   TransactionsState copyWith({
     TransactionsStatus? status,
     List<Transaction>? transactions,

@@ -17,4 +17,27 @@ class Transaction {
     required this.date,
     required this.notificationMethod,
   });
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Transaction &&
+          runtimeType == other.runtimeType &&
+          id == other.id &&
+          type == other.type &&
+          fundId == other.fundId &&
+          fundName == other.fundName &&
+          amount == other.amount &&
+          date == other.date &&
+          notificationMethod == other.notificationMethod;
+
+  @override
+  int get hashCode =>
+      id.hashCode ^
+      type.hashCode ^
+      fundId.hashCode ^
+      fundName.hashCode ^
+      amount.hashCode ^
+      date.hashCode ^
+      notificationMethod.hashCode;
 }

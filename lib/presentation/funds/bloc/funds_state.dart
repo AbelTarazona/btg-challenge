@@ -24,6 +24,29 @@ class FundsState {
     this.cancellingInvestmentId,
   });
 
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is FundsState &&
+          runtimeType == other.runtimeType &&
+          status == other.status &&
+          user == other.user &&
+          investments == other.investments &&
+          errorMessage == other.errorMessage &&
+          cancellationStatus == other.cancellationStatus &&
+          cancellationError == other.cancellationError &&
+          cancellingInvestmentId == other.cancellingInvestmentId;
+
+  @override
+  int get hashCode =>
+      status.hashCode ^
+      user.hashCode ^
+      investments.hashCode ^
+      errorMessage.hashCode ^
+      cancellationStatus.hashCode ^
+      cancellationError.hashCode ^
+      cancellingInvestmentId.hashCode;
+
   FundsState copyWith({
     FundsStatus? status,
     User? user,
