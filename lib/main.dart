@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
+import 'core/router/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,14 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ShadApp(
+    return ShadApp.router(
       title: 'BTG Challenge',
       themeMode: ThemeMode.system,
-      home: const Scaffold(
-        body: Center(
-          child: Text('BTG Challenge'),
-        ),
-      ),
+      routerConfig: appRouter,
     );
   }
 }
