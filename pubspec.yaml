@@ -24,3 +24,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/mocks/funds.json
+    - assets/mocks/user.json
+    - assets/mocks/investments.json
+    - assets/mocks/transactions.json
+    - assets/mocks/notifications.json

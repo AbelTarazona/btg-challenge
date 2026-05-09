@@ -1,0 +1,18 @@
+[
+  {
+    "id": "INV-001",
+    "fundId": 1,
+    "fundName": "FPV_BTG_PACTUAL_RECAUDADORA",
+    "amount": 100000,
+    "subscriptionDate": "2026-05-01T10:00:00Z",
+    "notificationMethod": "EMAIL"
+  },
+  {
+    "id": "INV-002",
+    "fundId": 3,
+    "fundName": "DEUDAPRIVADA",
+    "amount": 50000,
+    "subscriptionDate": "2026-05-03T15:30:00Z",
+    "notificationMethod": "SMS"
+  }
+]

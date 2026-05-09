@@ -1,0 +1,29 @@
+[
+  {
+    "id": "TX-001",
+    "type": "SUBSCRIPTION",
+    "fundId": 1,
+    "fundName": "FPV_BTG_PACTUAL_RECAUDADORA",
+    "amount": 100000,
+    "date": "2026-05-01T10:00:00Z",
+    "notificationMethod": "EMAIL"
+  },
+  {
+    "id": "TX-002",
+    "type": "SUBSCRIPTION",
+    "fundId": 3,
+    "fundName": "DEUDAPRIVADA",
+    "amount": 50000,
+    "date": "2026-05-03T15:30:00Z",
+    "notificationMethod": "SMS"
+  },
+  {
+    "id": "TX-003",
+    "type": "CANCELLATION",
+    "fundId": 1,
+    "fundName": "FPV_BTG_PACTUAL_RECAUDADORA",
+    "amount": 100000,
+    "date": "2026-05-06T09:15:00Z",
+    "notificationMethod": "EMAIL"
+  }
+]

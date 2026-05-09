@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "FPV_BTG_PACTUAL_RECAUDADORA",
+    "minimumAmount": 75000,
+    "category": "FPV",
+    "description": "Fondo orientado a preservación de capital y liquidez.",
+    "riskLevel": "Bajo"
+  },
+  {
+    "id": 2,
+    "name": "FPV_BTG_PACTUAL_ECOPETROL",
+    "minimumAmount": 125000,
+    "category": "FPV",
+    "description": "Fondo enfocado en activos relacionados a ECOPETROL.",
+    "riskLevel": "Alto"
+  },
+  {
+    "id": 3,
+    "name": "DEUDAPRIVADA",
+    "minimumAmount": 50000,
+    "category": "FIC",
+    "description": "Fondo de inversión colectiva en deuda privada.",
+    "riskLevel": "Medio"
+  },
+  {
+    "id": 4,
+    "name": "FDO-ACCIONES",
+    "minimumAmount": 250000,
+    "category": "FIC",
+    "description": "Fondo enfocado en acciones de alta volatilidad.",
+    "riskLevel": "Alto"
+  },
+  {
+    "id": 5,
+    "name": "FPV_BTG_PACTUAL_DINAMICA",
+    "minimumAmount": 100000,
+    "category": "FPV",
+    "description": "Fondo dinámico con exposición diversificada.",
+    "riskLevel": "Medio"
+  }
+]
