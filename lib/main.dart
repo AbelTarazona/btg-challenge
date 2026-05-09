@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shadcn_ui/shadcn_ui.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,12 +10,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ShadApp(
       title: 'BTG Challenge',
-      theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+      themeMode: ThemeMode.system,
+      home: const Scaffold(
+        body: Center(
+          child: Text('BTG Challenge'),
+        ),
       ),
-      home: const SizedBox(),
     );
   }
 }
