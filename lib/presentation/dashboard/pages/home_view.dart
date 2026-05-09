@@ -17,12 +17,6 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   @override
-  void initState() {
-    super.initState();
-    context.read<HomeBloc>().add(HomeLoadRequested());
-  }
-
-  @override
   Widget build(BuildContext context) {
     final colors = context.colors;
 

@@ -19,4 +19,12 @@ class UserRepositoryImpl implements UserRepository {
       delay: const Duration(milliseconds: 800),
     );
   }
+
+  @override
+  Future<void> updateBalance(double newBalance) async {
+    return withMockDelay(
+      () => _dataSource.updateBalance(newBalance),
+      delay: const Duration(milliseconds: 300),
+    );
+  }
 }

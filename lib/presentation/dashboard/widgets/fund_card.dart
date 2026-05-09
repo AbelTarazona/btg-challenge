@@ -8,9 +8,15 @@ import 'package:btgproject/domain/entities/fund.dart';
 
 class FundCard extends StatelessWidget {
   final Fund fund;
+  final bool isSubscribed;
   final VoidCallback? onTap;
 
-  const FundCard({super.key, required this.fund, this.onTap});
+  const FundCard({
+    super.key,
+    required this.fund,
+    this.isSubscribed = false,
+    this.onTap,
+  });
 
   Color _riskColor(AppColors colors, String level) {
     switch (level) {
@@ -59,8 +65,10 @@ class FundCard extends StatelessWidget {
           color: colors.cardDark,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: colors.surfaceLight.withValues(alpha: 0.3),
-            width: 1,
+            color: isSubscribed
+                ? colors.accentTeal.withValues(alpha: 0.4)
+                : colors.surfaceLight.withValues(alpha: 0.3),
+            width: isSubscribed ? 1.5 : 1,
           ),
         ),
         child: Column(
@@ -133,7 +141,7 @@ class FundCard extends StatelessWidget {
 
             const SizedBox(height: 14),
 
-            // ── Footer: Monto mínimo + flecha ──
+            // ── Footer: Monto mínimo + estado suscripción ──
             Row(
               children: [
                 FaIcon(
@@ -156,11 +164,36 @@ class FundCard extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                FaIcon(
-                  FontAwesomeIcons.chevronRight,
-                  size: 14,
-                  color: colors.textMuted,
-                ),
+                if (isSubscribed)
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: colors.accentTeal.withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        FaIcon(FontAwesomeIcons.circleCheck,
+                            size: 10, color: colors.accentTeal),
+                        const SizedBox(width: 4),
+                        Text(
+                          'Suscrito',
+                          style: textStyles.label.copyWith(
+                            color: colors.accentTeal,
+                            fontSize: 10,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                else
+                  FaIcon(
+                    FontAwesomeIcons.chevronRight,
+                    size: 14,
+                    color: colors.textMuted,
+                  ),
               ],
             ),
           ],
